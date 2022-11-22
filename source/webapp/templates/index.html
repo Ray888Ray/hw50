@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block menu %}
+<li class="nav-item">
+  <a class="nav-link active" href="{% url 'add' %}">Create</a>
+</li>
+{% endblock %}
+{% block content %}
+    <h1 class="text-center" >Tracker List</h1><br/><hr>
+    {% for tracker in trackers %}
+        <h2>{{ tracker.short_description }}-({{ tracker.status }})</h2>
+        <p>{% for t in tracker.type.all %}{{ t}}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+        <p>{{ tracker.updated_at }}</p>
+        <h3><a href="{% url 'info' tracker.pk %}">More...</a></h3><br/>
+        <hr>
+    {% endfor %}
+{% endblock %}
+
+
+
