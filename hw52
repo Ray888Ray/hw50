@@ -3,7 +3,11 @@
 from webapp.models import Tracker, Status, Type
 from datetime import timedelta
 from django.utils import timezone
-Tracker.objects.filter(updated_at__gte=timezone.now()-timedelta(days=31))
+from django.db.models import Q
+q_1 = Q(updated_at__gte=timezone.now() - timedelta(days=30))
+q_2 = Q(status=3)
+Tracker.objects.filter(q_1 & q_2)
+<QuerySet [<Tracker: 7 Test3>, <Tracker: 11 Test6>, <Tracker: 25 Test11>]>
 
 
 #2
@@ -22,3 +26,11 @@ q_1 = Q(short_description__iexact='Bug')
 q_2 =Q(type__gt=1)
 q_3 =Q(status__lt=3)
 Tracker.objects.filter(q_1&q_2&q_3)
+
+
+
+#1.1
+from webapp.models import Tracker, Status, Type
+from datetime import timedelta
+from django.utils import timezone
+Tracker.objects.filter(updated_at__gte=timezone.now()-timedelta(days=31))
