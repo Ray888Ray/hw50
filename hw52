@@ -3,7 +3,7 @@
 from webapp.models import Tracker, Status, Type
 from datetime import timedelta
 from django.utils import timezone
-Tracker.objects.filter(updated_at=timezone.now()-timedelta(days=31))
+Tracker.objects.filter(updated_at__gte=timezone.now()-timedelta(days=31))
 
 
 #2
