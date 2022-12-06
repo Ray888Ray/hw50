@@ -1,26 +1,18 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
-from webapp.models import Tracker
-from django.views.generic import TemplateView, FormView, ListView
+from webapp.models import Tracker, Project
+from django.views.generic import TemplateView, FormView, ListView, DetailView, CreateView
 from webapp.forms import TackerForm, SimpleSearchForm
-from webapp.base_validator import FormView as HandMadeFormView, ListView as HandMadeListView
 from django.db.models import Q
 from django.utils.http import urlencode
 
 # Create your views here.
-
-# class IndexView(HandMadeListView):
-#     template_name = 'index.html'
-#     context_key = 'trackers'
-#
-#     def get_objects(self):
-#         return Tracker.objects.all().order_by('-created_at')
 
 
 class IndexView(ListView):
     template_name = 'tracker/index.html'
     context_object_name = 'trackers'
     model = Tracker
-    ordering = ('-created_at')
+    ordering = '-created_at'
     paginate_by = 10
 
     def get(self, request, *args, **kwargs):
@@ -52,13 +44,9 @@ class IndexView(ListView):
         return context
 
 
-class InfoView(TemplateView):
+class InfoView(DetailView):
     template_name = 'tracker/info.html'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['tracker'] = get_object_or_404(Tracker, pk=kwargs['pk'])
-        return context
+    model = Tracker
 
 
 class DeleteView(TemplateView):
@@ -74,18 +62,18 @@ class DeleteView(TemplateView):
         return redirect('index')
 
 
-class AddView(HandMadeFormView):
-    template_name = 'add.html'
+class AddView(CreateView):
+    template_name = 'tracker/add.html'
+    model = Tracker
     form_class = TackerForm
 
-    def form_valid(self, form):
-        types = form.cleaned_data.pop('type')
-        self.tracker = Tracker.objects.create(**form.cleaned_data)
-        self.tracker.type.set(types)
-        return super().form_valid(form)
+    def get_success_url(self):
+        return reverse('project_info', kwargs={'pk': self.object.project_fk.pk})
 
-    def get_redirect_url(self):
-        return reverse('info', kwargs={'pk': self.tracker.pk})
+    def form_valid(self, form):
+        project = get_object_or_404(Project, pk=self.kwargs.get('pk'))
+        form.instance.project_fk = project
+        return super().form_valid(form)
 
 
 class UpdatedView(FormView):
