@@ -1,10 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'base.html' %}
+{% block menu %}
+    <li class="nav-item">
+      <a class="nav-link active" href="{% url 'add' project.pk %}">Add tracker</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" href="{% url 'project_delete' project.pk %}">Delete</a>
+    </li>
+{% endblock %}
+{% block content %}
+{% csrf_token %}
+    <h1>Information:</h1><br>
+    <p><b>Title:</b> {{ project.title }}</p>
+    <p><b>Description:</b> {{ project.description }}</p>
+    <p><b>Started at:</b>{{ project.started_at}}</p>
+    <p><b>Deadline:</b>{{ project.finished_at}}</p>
+    <br><br><h3>Project's Trackers:</h3><br/>
+    <p>{% for pro in project.projects_fk.all %}
+        <a href="{% url 'info' pro.pk%}">{{ pro.short_description }}</a>
+        {% if not forloop.last %}<br><br> {% endif %}
+    {% endfor %}</p>
+{% endblock %}
