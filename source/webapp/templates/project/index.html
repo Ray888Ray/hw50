@@ -1,10 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block menu %}
 
-</body>
-</html>
+<li class="nav-item">
+    <a class="nav-link active" href="{% url 'project_add' %}">Create</a>
+</li>
+
+
+{% endblock %}
+
+{% block content %}
+
+    <h1 class="text-center" >Projects</h1><br/><hr>
+
+    {% for project in projects %}
+        <h2>{{ project.title }})</h2>
+        <h3><a href="{% url 'project_info' project.pk %}">More...</a></h3><br/>
+        <hr>
+    {% endfor %}
+
+    {% if is_paginated %}
+        {% include 'partial/pagination.html' %}
+    {% endif %}
+
+{% endblock %}
