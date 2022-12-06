@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block menu %}
     <li class="nav-item">
-      <a class="nav-link active" href="{% url 'add' %}">Create</a>
+      <a class="nav-link active" href="{% url 'add' tracker.pk %}">Create</a>
     </li>
     <li class="nav-item">
       <a class="nav-link active" href="{% url 'update' tracker.pk %}">Update</a>
@@ -13,11 +13,13 @@
 {% block content %}
 {% csrf_token %}
     <h1>Information:</h1><br>
+    <h3><b>Project Name: </b>{{ tracker.projects_fk }}</h3></br>
     <p><b>Type:</b> {% for t in tracker.type.all %}{{ t}}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
     <p><b>Title:</b> {{ tracker.short_description }}</p>
     <p><b>Description:</b> {{ tracker.content }}</p>
     <p><b>Status:</b> {{ tracker.status }}</p>
     <p><b>Created at:</b>{{ tracker.created_at}}</p>
     <p><b>Updated at:</b>{{ tracker.updated_at}}</p>
+
 
 {% endblock %}
