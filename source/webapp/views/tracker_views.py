@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse
 from webapp.models import Tracker
 from django.views.generic import TemplateView, FormView, ListView
 from webapp.forms import TackerForm, SimpleSearchForm
-from .base_validator import FormView as HandMadeFormView, ListView as HandMadeListView
+from webapp.base_validator import FormView as HandMadeFormView, ListView as HandMadeListView
 from django.db.models import Q
 from django.utils.http import urlencode
 
@@ -17,7 +17,7 @@ from django.utils.http import urlencode
 
 
 class IndexView(ListView):
-    template_name = 'index.html'
+    template_name = 'tracker/index.html'
     context_object_name = 'trackers'
     model = Tracker
     ordering = ('-created_at')
@@ -52,10 +52,8 @@ class IndexView(ListView):
         return context
 
 
-
-
 class InfoView(TemplateView):
-    template_name = 'info.html'
+    template_name = 'tracker/info.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -64,11 +62,11 @@ class InfoView(TemplateView):
 
 
 class DeleteView(TemplateView):
-    template_name = 'delete.html'
+    template_name = 'tracker/delete.html'
 
     def get(self, request, *args, **kwargs):
         tracker = get_object_or_404(Tracker, pk=kwargs['pk'])
-        return render(request, 'delete.html', context={'tracker': tracker})
+        return render(request, 'tracker/delete.html', context={'tracker': tracker})
 
     def post(self, request, *args, **kwargs):
         tracker = get_object_or_404(Tracker, pk=kwargs['pk'])
@@ -91,7 +89,7 @@ class AddView(HandMadeFormView):
 
 
 class UpdatedView(FormView):
-    template_name = 'update.html'
+    template_name = 'tracker/update.html'
     form_class = TackerForm
 
     def dispatch(self, request, *args, **kwargs):
