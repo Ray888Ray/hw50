@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 {% block menu %}
     <li class="nav-item">
-      <a class="nav-link active" href="{% url 'add' tracker.pk %}">Create</a>
+      <a class="nav-link active" href="{% url 'add' tracker.projects_fk.pk %}">Create</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link active" href="{% url 'update' tracker.pk %}">Update</a>
+      <a class="nav-link active" href="{% url 'update' tracker.projects_fk.pk %}">Update</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link active" href="{% url 'delete' tracker.pk %}">Delete</a>
+      <a class="nav-link active" href="{% url 'delete' tracker.projects_fk.pk %}">Delete</a>
     </li>
 {% endblock %}
 {% block content %}
