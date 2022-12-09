@@ -1,6 +1,7 @@
-from django.shortcuts import render, get_object_or_404, redirect, reverse
-from webapp.models import Project, Tracker
-from django.views.generic import ListView, CreateView, DetailView, TemplateView
+from django.shortcuts import reverse, get_object_or_404, render, redirect
+from django.urls import reverse_lazy
+from webapp.models import Project
+from django.views.generic import ListView, CreateView, DetailView, UpdateView, DeleteView
 from webapp.forms import ProjectForm
 
 
@@ -10,11 +11,9 @@ class ProjectIndexView(ListView):
     model = Project
     paginate_by = 3
 
-
-class ProjectTrackerView(ListView):
-    template_name = 'tracker/index.html'
-    context_object_name = 'trackers'
-    model = Tracker
+    def get_queryset(self):
+        soft_deletion = Project.objects.filter(is_deleted=False)
+        return soft_deletion
 
 
 class ProjectView(DetailView):
@@ -39,14 +38,32 @@ class ProjectAddView(CreateView):
         return reverse('project_info', kwargs={'pk': self.object.pk})
 
 
-class ProjectDeleteView(TemplateView):
+class ProjectUpdateView(UpdateView):
+    model = Project
+    template_name = 'project/update.html'
+    form_class = ProjectForm
+    context_key = 'project'
+
+    def get_success_url(self):
+        return reverse('project_info', kwargs={'pk': self.object.pk})
+
+
+class ProjectDeleteView(DeleteView):
     template_name = 'project/delete.html'
+    success_url = reverse_lazy('project_index')
 
     def get(self, request, *args, **kwargs):
         project = get_object_or_404(Project, pk=kwargs['pk'])
-        return render(request, 'project/delete.html', context={'project': project})
-
-    def post(self, request, *args, **kwargs):
-        project = get_object_or_404(Project, pk=kwargs['pk'])
-        project.delete()
+        project.is_deleted = True
+        project.save()
         return redirect('project_index')
+
+
+# class ProjectDeleteView(DeleteView):
+#     template_name = 'project/delete.html'
+#     model = Project
+#     context_object_name = 'project'
+#     success_url = reverse_lazy('project_index')
+
+
+
