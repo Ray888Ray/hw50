@@ -1,6 +1,7 @@
-from django.shortcuts import render, get_object_or_404, redirect, reverse
+from django.shortcuts import get_object_or_404, reverse, render, redirect
+from django.urls import reverse_lazy
 from webapp.models import Tracker, Project
-from django.views.generic import TemplateView, FormView, ListView, DetailView, CreateView
+from django.views.generic import TemplateView, FormView, ListView, DetailView, CreateView, DeleteView, UpdateView
 from webapp.forms import TackerForm, SimpleSearchForm
 from django.db.models import Q
 from django.utils.http import urlencode
@@ -49,17 +50,21 @@ class InfoView(DetailView):
     model = Tracker
 
 
-class DeleteView(TemplateView):
-    template_name = 'tracker/delete.html'
+# class TrackerDeleteView(DeleteView):
+#     template_name = 'tracker/delete.html'
+#     model = Tracker
+#     context_object_name = 'tracker'
+#     success_url = reverse_lazy('project_info')
+
+
+class TrackerDeleteView(DeleteView):
+    model = Tracker
 
     def get(self, request, *args, **kwargs):
-        tracker = get_object_or_404(Tracker, pk=kwargs['pk'])
-        return render(request, 'tracker/delete.html', context={'tracker': tracker})
+        return self.delete(request, *args, **kwargs)
 
-    def post(self, request, *args, **kwargs):
-        tracker = get_object_or_404(Tracker, pk=kwargs['pk'])
-        tracker.delete()
-        return redirect('index')
+    def get_success_url(self):
+        return reverse_lazy('project_index')
 
 
 class AddView(CreateView):
@@ -76,31 +81,12 @@ class AddView(CreateView):
         return super().form_valid(form)
 
 
-class UpdatedView(FormView):
+class UpdatedView(UpdateView):
+    model = Tracker
     template_name = 'tracker/update.html'
     form_class = TackerForm
-
-    def dispatch(self, request, *args, **kwargs):
-        self.tracker = self.get_object()
-        return super().dispatch(request, *args, **kwargs)
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['tracker'] = self.tracker
-        return context
-
-    def get_form_kwargs(self):
-        kwargs = super().get_form_kwargs()
-        kwargs['instance'] = self.tracker
-        return kwargs
-
-    def form_valid(self, form):
-        self.tracker = form.save()
-        return super().form_valid(form)
+    context_object_name = 'tracker'
 
     def get_success_url(self):
-        return reverse('info', kwargs={'pk': self.tracker.pk})
+        return reverse('info', kwargs={'pk': self.object.pk})
 
-    def get_object(self):
-        pk = self.kwargs.get('pk')
-        return get_object_or_404(Tracker, pk=pk)
