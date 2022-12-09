@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 {% block menu %}
     <li class="nav-item">
+      <a class="nav-link active" href="{% url 'project_update' project.pk %}">Update</a>
+    </li>
+    <li class="nav-item">
       <a class="nav-link active" href="{% url 'add' project.pk %}">Add tracker</a>
     </li>
     <li class="nav-item">
@@ -16,7 +19,12 @@
     <p><b>Deadline:</b>{{ project.finished_at}}</p>
     <br><br><h3>Project's Trackers:</h3><br/>
     <p>{% for pro in project.projects_fk.all %}
-        <a href="{% url 'info' pro.pk%}">{{ pro.short_description }}</a>
+        <hr>
+        <h2>{{ pro.short_description }}</h2>
+        <br>
+        <a href="{% url 'info' pro.pk%}" class="px-2 fs-1" ><i class="bi bi-info-circle-fill"></i></a>
+        <a href="{% url 'update' pro.pk%}" class="px-2 fs-1"><i class="bi bi-pencil-square"></i></a>
+        <a href="{% url 'delete' pro.pk%}" class="px-2 fs-1"><i class="bi bi-trash-fill"></i></a>
         {% if not forloop.last %}<br><br> {% endif %}
-    {% endfor %}</p>
+    <p>{% endfor %}</p>
 {% endblock %}
