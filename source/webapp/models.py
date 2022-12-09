@@ -30,10 +30,26 @@ class Tracker(models.Model):
 
 
 class Project(models.Model):
-    title = models.CharField(max_length=20, null=False, blank=False, verbose_name='Title')
+    is_deleted = models.BooleanField(default=False)
+    title = models.CharField(max_length=25, null=False, blank=False, verbose_name='Title')
     description = models.CharField(max_length=2000, null=False, blank=False, verbose_name='Description')
     started_at = models.DateField(blank=False, null=False, verbose_name='Start')
     finished_at = models.DateField(blank=True, null=True, verbose_name='Finish')
 
     def __str__(self):
         return f'{self.title}'
+
+
+class SoftDeleteModel(models.Model):
+    is_deleted = models.BooleanField(default=False)
+
+    def soft_delete(self):
+        self.is_deleted = True
+        self.save()
+
+    def restore(self):
+        self.is_deleted = False
+        self.save()
+
+    class Meta:
+        abstract = True
