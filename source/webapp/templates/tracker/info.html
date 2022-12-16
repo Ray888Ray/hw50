@@ -1,14 +1,16 @@
 {% extends 'base.html' %}
 {% block menu %}
     <li class="nav-item">
-      <a class="nav-link active" href="{% url 'add' tracker.projects_fk.pk %}">Create</a>
+    {% if request.user.is_authenticated %}
+      <a class="nav-link active" href="{% url 'webapp:add' tracker.projects_fk.pk %}">Create</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link active" href="{% url 'update' tracker.projects_fk.pk %}">Update</a>
+      <a class="nav-link active" href="{% url 'webapp:update' tracker.projects_fk.pk %}">Update</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link active" href="{% url 'delete' tracker.projects_fk.pk %}">Delete</a>
+      <a class="nav-link active" href="{% url 'webapp:delete' tracker.projects_fk.pk %}">Delete</a>
     </li>
+    {% endif %}
 {% endblock %}
 {% block content %}
 {% csrf_token %}

@@ -15,7 +15,7 @@
         <h2>{{ tracker.short_description }}-({{ tracker.status }})</h2>
         <p>{% for t in tracker.type.all %}{{ t}}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
         <p>{{ tracker.updated_at }}</p>
-        <h3><a href="{% url 'info' tracker.pk %}">More...</a></h3><br/>
+        <h3><a href="{% url 'webapp:info' tracker.pk %}">More...</a></h3><br/>
         <hr>
     {% endfor %}
 

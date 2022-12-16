@@ -2,11 +2,11 @@
 {% block title %}Delete Project{% endblock %}
 {% block content %}
     <h1>Are you sure want to delete  "{{ project.title }}"?</h1>
-    <form method="POST" action="{% url "project_delete" project.pk %}" class="text-center" >
+    <form method="POST" action="{% url "webapp:project_delete" project.pk %}" class="text-center" >
         {% csrf_token %}
         <div class="d-flex justify-content-evenly">
         <p><input type="submit" class="p-3 mb-2 bg-danger text-white" value="Confirm"></p>
-        <p><a href="{% url "project_info" project.pk %}" class="p-3 mb-2 bg-dark text-white" class="p-3" >Cancel</a></p>
+        <p><a href="{% url "webapp:project_info" project.pk %}" class="p-3 mb-2 bg-dark text-white" class="p-3" >Cancel</a></p>
         </div>
     </form>
 {% endblock %}
