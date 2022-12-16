@@ -1,7 +1,8 @@
-from django.shortcuts import get_object_or_404, reverse, render, redirect
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.shortcuts import get_object_or_404, reverse
 from django.urls import reverse_lazy
 from webapp.models import Tracker, Project
-from django.views.generic import TemplateView, FormView, ListView, DetailView, CreateView, DeleteView, UpdateView
+from django.views.generic import ListView, DetailView, CreateView, DeleteView, UpdateView
 from webapp.forms import TackerForm, SimpleSearchForm
 from django.db.models import Q
 from django.utils.http import urlencode
@@ -9,7 +10,7 @@ from django.utils.http import urlencode
 # Create your views here.
 
 
-class IndexView(ListView):
+class IndexView(LoginRequiredMixin, ListView):
     template_name = 'tracker/index.html'
     context_object_name = 'trackers'
     model = Tracker
@@ -45,35 +46,28 @@ class IndexView(ListView):
         return context
 
 
-class InfoView(DetailView):
+class InfoView(LoginRequiredMixin, DetailView):
     template_name = 'tracker/info.html'
     model = Tracker
 
 
-# class TrackerDeleteView(DeleteView):
-#     template_name = 'tracker/delete.html'
-#     model = Tracker
-#     context_object_name = 'tracker'
-#     success_url = reverse_lazy('project_info')
-
-
-class TrackerDeleteView(DeleteView):
+class TrackerDeleteView(LoginRequiredMixin, DeleteView):
     model = Tracker
 
     def get(self, request, *args, **kwargs):
         return self.delete(request, *args, **kwargs)
 
     def get_success_url(self):
-        return reverse_lazy('project_index')
+        return reverse_lazy('webapp:project_index')
 
 
-class AddView(CreateView):
+class AddView(LoginRequiredMixin, CreateView):
     template_name = 'tracker/add.html'
     model = Tracker
     form_class = TackerForm
 
     def get_success_url(self):
-        return reverse('project_info', kwargs={'pk': self.object.project_fk.pk})
+        return reverse('webapp:project_info', kwargs={'pk': self.object.project_fk.pk})
 
     def form_valid(self, form):
         project = get_object_or_404(Project, pk=self.kwargs.get('pk'))
@@ -81,12 +75,12 @@ class AddView(CreateView):
         return super().form_valid(form)
 
 
-class UpdatedView(UpdateView):
+class UpdatedView(LoginRequiredMixin, UpdateView):
     model = Tracker
     template_name = 'tracker/update.html'
     form_class = TackerForm
     context_object_name = 'tracker'
 
     def get_success_url(self):
-        return reverse('info', kwargs={'pk': self.object.pk})
+        return reverse('webapp:info', kwargs={'pk': self.object.pk})
 

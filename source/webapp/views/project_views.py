@@ -1,8 +1,9 @@
-from django.shortcuts import reverse, get_object_or_404, render, redirect
+from django.shortcuts import reverse, get_object_or_404, redirect
 from django.urls import reverse_lazy
 from webapp.models import Project
 from django.views.generic import ListView, CreateView, DetailView, UpdateView, DeleteView
 from webapp.forms import ProjectForm
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 class ProjectIndexView(ListView):
@@ -28,27 +29,27 @@ class ProjectView(DetailView):
         return context
 
 
-class ProjectAddView(CreateView):
+class ProjectAddView(LoginRequiredMixin, CreateView):
 
     template_name = 'project/add.html'
     model = Project
     form_class = ProjectForm
 
     def get_success_url(self):
-        return reverse('project_info', kwargs={'pk': self.object.pk})
+        return reverse('webapp:project_info', kwargs={'pk': self.object.pk})
 
 
-class ProjectUpdateView(UpdateView):
+class ProjectUpdateView(LoginRequiredMixin, UpdateView):
     model = Project
     template_name = 'project/update.html'
     form_class = ProjectForm
     context_key = 'project'
 
     def get_success_url(self):
-        return reverse('project_info', kwargs={'pk': self.object.pk})
+        return reverse('webapp:project_info', kwargs={'pk': self.object.pk})
 
 
-class ProjectDeleteView(DeleteView):
+class ProjectDeleteView(LoginRequiredMixin, DeleteView):
     template_name = 'project/delete.html'
     success_url = reverse_lazy('project_index')
 
@@ -56,7 +57,7 @@ class ProjectDeleteView(DeleteView):
         project = get_object_or_404(Project, pk=kwargs['pk'])
         project.is_deleted = True
         project.save()
-        return redirect('project_index')
+        return redirect('webapp:project_index')
 
 
 # class ProjectDeleteView(DeleteView):
