@@ -1,8 +1,40 @@
 from django.contrib.auth import authenticate, login, logout
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
+from accounts.forms import MyUserCreationForm, UserCreationForm
+from django.contrib.auth.models import User
+from django.views.generic import CreateView
 
 
-# Create your views here.
+class RegisterView(CreateView):
+    model = User
+    template_name = 'user_create.html'
+    form_class = MyUserCreationForm
+
+    def form_valid(self, form):
+        user = form.save()
+        login(self.request, user)
+        return redirect(self.get_success_url())
+
+    def get_success_url(self):
+        next_url = self.request.GET.get('next')
+        if not next_url:
+            next_url = self.request.POST.get('next')
+        if not next_url:
+            next_url = reverse('webapp:project_index')
+        return next_url
+
+# def register_view(request, *args, **kwargs):
+#     if request.method == 'POST':
+#         form = MyUserCreationForm(data=request.POST)
+#         if form.is_valid():
+#             user = form.save()
+#             login(request, user)
+#             return redirect('webapp:project_index')
+#     else:
+#         form = MyUserCreationForm()
+#     return render(request, 'user_create.html', {'form': form})
+
+
 def login_view(request):
     context = {}
     if request.method == 'POST':
