@@ -26,8 +26,8 @@
         <br>
         {% if request.user.is_authenticated %}
         <a href="{% url 'webapp:info' pro.pk%}" class="px-2 fs-1" ><i class="bi bi-info-circle-fill"></i></a>
-        <a href="{% url 'webapp:update' pro.pk%}" class="px-2 fs-1"><i class="bi bi-pencil-square"></i></a>
-        <a href="{% url 'webapp:delete' pro.pk%}" class="px-2 fs-1"><i class="bi bi-trash-fill"></i></a>
+        <a href="{% url 'webapp:update' pro.pk  %}" class="px-2 fs-1"><i class="bi bi-pencil-square"></i></a>
+        <a href="{% url 'webapp:delete' project.pk %}" class="px-2 fs-1"><i class="bi bi-trash-fill"></i></a>
         {% endif %}
         {% if not forloop.last %}<br><br> {% endif %}
     <p>{% endfor %}</p>

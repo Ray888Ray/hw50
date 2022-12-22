@@ -27,16 +27,25 @@
 
       {% if request.user.is_authenticated %}
            {% block menu_links %}{% endblock %}
+
            <li class="nav-item">
-               <a class="nav-link active" href="{% url 'accounts:logout' %}" >Log out</a>
+               <a class="nav-link active" href="{% url 'accounts:logout' %}?next={{ request.get_full_path }}" >Log out</a>
            </li>
+
            <li class="nav-item">
                <p class="nav-link">Hello, {{ user.username }}!</p>
            </li>
+
        {% else %}
-           <li class="nav-item">
-            <a class="nav-link active" href="{% url 'accounts:login'  %}">Log in</a>
+
+           <li class="nav-item ">
+            <a class="btn btn-dark ms-auto"  href="{% url 'accounts:login'  %}?next={{ request.get_full_path }}">Log in</a>
           </li>
+
+          <li class="nav-item">
+            <a class="btn btn-outline-secondary ms-2" href="{% url 'accounts:register'  %}?next={{ request.get_full_path }}">Sing up</a>
+          </li>
+
        {% endif %}
       </ul>
     </div>
