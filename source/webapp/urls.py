@@ -1,5 +1,5 @@
 from django.urls import path
-from webapp.views import IndexView, InfoView, AddView, UpdatedView, TrackerDeleteView
+from webapp.views.tracker_views import IndexView, InfoView, AddView, UpdatedView, TrackerDeleteView
 from webapp.views.project_views import ProjectIndexView, ProjectAddView, ProjectView, \
     ProjectDeleteView, ProjectUpdateView
 
