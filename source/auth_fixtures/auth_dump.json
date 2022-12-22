@@ -1,0 +1,92 @@
+[
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$K8KyZGzBfKfgy2gmriJhBl$ZZs8Zv/uF/BPejPmkHFrEDFCiwkS08FCNNhpvFb14Ww=",
+    "last_login": "2022-12-22T12:08:13.846Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2022-11-18T09:02:01.072Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$raYJxp8C4JIWcKd5Ma85yZ$kVfy+q+2ssgKmeMql3ATIKQt8DJEqZs17OZDPmTSNDA=",
+    "last_login": "2022-12-22T11:58:21.698Z",
+    "is_superuser": false,
+    "username": "test",
+    "first_name": "test",
+    "last_name": "1",
+    "email": "test@exmp.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-12-22T10:07:20.053Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$pTkiCBBWRTMkbGzKnMbN5Q$sNoWxuWmKCtX/l8Dym6Shux/81TSJuHI4QqiKzyGEc0=",
+    "last_login": "2022-12-22T10:53:08.185Z",
+    "is_superuser": false,
+    "username": "test2",
+    "first_name": "test",
+    "last_name": "2",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-12-22T10:53:07.919Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$kZPGWkxxjjOLlQENVGlV7b$1r7qPPuhAtLgbZI9nfjtci8g27Al4BZD/n2yqewi0kQ=",
+    "last_login": "2022-12-22T11:54:23.899Z",
+    "is_superuser": false,
+    "username": "test3",
+    "first_name": "test",
+    "last_name": "",
+    "email": "exmp@exmp.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-12-22T11:54:23.718Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$i1eKxO95kDxfu1MHHhHDRv$dqgAX7szy1a1MlT3G7bDEHswZHbUkDQFeBOVNDIbeh0=",
+    "last_login": "2022-12-22T11:56:23.556Z",
+    "is_superuser": false,
+    "username": "test4",
+    "first_name": "test",
+    "last_name": "",
+    "email": "jojo_reference@example.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-12-22T11:56:23.384Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
