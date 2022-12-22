@@ -1,4 +1,3 @@
-from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import get_object_or_404, reverse
 from django.urls import reverse_lazy
 from webapp.models import Tracker, Project
@@ -10,12 +9,16 @@ from django.utils.http import urlencode
 # Create your views here.
 
 
-class IndexView(LoginRequiredMixin, ListView):
+class IndexView(ListView):
     template_name = 'tracker/index.html'
     context_object_name = 'trackers'
     model = Tracker
     ordering = '-created_at'
     paginate_by = 10
+
+    def get_queryset(self):
+        soft_deletion = Project.objects.filter(is_deleted=False)
+        return soft_deletion
 
     def get(self, request, *args, **kwargs):
         self.form = self.get_search_form()
@@ -46,12 +49,12 @@ class IndexView(LoginRequiredMixin, ListView):
         return context
 
 
-class InfoView(LoginRequiredMixin, DetailView):
+class InfoView(DetailView):
     template_name = 'tracker/info.html'
     model = Tracker
 
 
-class TrackerDeleteView(LoginRequiredMixin, DeleteView):
+class TrackerDeleteView(DeleteView):
     model = Tracker
 
     def get(self, request, *args, **kwargs):
@@ -61,7 +64,7 @@ class TrackerDeleteView(LoginRequiredMixin, DeleteView):
         return reverse_lazy('webapp:project_index')
 
 
-class AddView(LoginRequiredMixin, CreateView):
+class AddView(CreateView):
     template_name = 'tracker/add.html'
     model = Tracker
     form_class = TackerForm
@@ -75,7 +78,7 @@ class AddView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
-class UpdatedView(LoginRequiredMixin, UpdateView):
+class UpdatedView(UpdateView):
     model = Tracker
     template_name = 'tracker/update.html'
     form_class = TackerForm
