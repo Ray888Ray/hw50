@@ -1,3 +1,4 @@
+from django.contrib.auth import get_user_model
 from django.db import models
 # Create your models here.
 
@@ -17,7 +18,8 @@ class Type(models.Model):
 
 
 class Tracker(models.Model):
-    projects_fk = models.ForeignKey('webapp.Project', related_name='projects_fk', on_delete=models.CASCADE, verbose_name='Project')
+    projects_fk = models.ForeignKey('webapp.Project', related_name='projects_fk', on_delete=models.CASCADE,
+                                    verbose_name='Project')
     status = models.ForeignKey('webapp.Status', related_name='status', on_delete=models.PROTECT, verbose_name='Status')
     type = models.ManyToManyField('webapp.Type', related_name='type', blank=True)
     short_description = models.CharField(max_length=100, null=False, blank=False, verbose_name='Short')
@@ -35,6 +37,11 @@ class Project(models.Model):
     description = models.CharField(max_length=2000, null=False, blank=False, verbose_name='Description')
     started_at = models.DateField(blank=False, null=False, verbose_name='Start')
     finished_at = models.DateField(blank=True, null=True, verbose_name='Finish')
+    user = models.ManyToManyField(get_user_model(), related_name='user', blank=True)
+
+    class Meta:
+        permissions = [('can_add_users', 'может добавить пользователей '),
+                       ('can_delete_users', 'может удалять пользователей ')]
 
     def __str__(self):
         return f'{self.title}'

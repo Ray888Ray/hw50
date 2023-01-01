@@ -1,7 +1,7 @@
 from django.urls import path
 from webapp.views.tracker_views import IndexView, InfoView, AddView, UpdatedView, TrackerDeleteView
 from webapp.views.project_views import ProjectIndexView, ProjectAddView, ProjectView, \
-    ProjectDeleteView, ProjectUpdateView
+    ProjectDeleteView, ProjectUpdateView, AddUser, DeleteUser
 
 app_name = 'webapp'
 
@@ -17,5 +17,8 @@ urlpatterns = [
     path('tracker/<int:pk>/', InfoView.as_view(), name='info'),
     path('tracker/<int:pk>/update/', UpdatedView.as_view(), name='update'),
     path('tracker/<int:pk>/delete/', TrackerDeleteView.as_view(), name='delete'),
+
+    path('user/<int:pk>/add', AddUser.as_view(), name='user_add'),
+    path('user/<int:pk>/delete', DeleteUser.as_view(), name='user_delete'),
 
 ]

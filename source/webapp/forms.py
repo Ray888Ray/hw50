@@ -38,6 +38,13 @@ class TackerForm(forms.ModelForm):
             raise ValidationError("Text of the article should not duplicate it's title!")
 
 
+class ProjectUserForm(forms.ModelForm):
+    class Meta:
+        model = Project
+        fields = ['user']
+        widgets = {'user': widgets.CheckboxSelectMultiple}
+
+
 class ProjectForm(forms.ModelForm):
     class Meta:
         model = Project

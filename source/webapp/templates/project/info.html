@@ -10,6 +10,19 @@
     <li class="nav-item">
       <a class="nav-link active" href="{% url 'webapp:project_delete' project.pk %}">Delete</a>
     </li>
+
+    {% if perms.webapp.can_add_users or request.user.username == 'manager' or request.user.username == 'lead'  %}
+        <li class="nav-item">
+          <a class="nav-link active" href="{% url 'webapp:user_add' project.pk %}">Add User</a>
+        </li>
+    {% endif %}
+
+    {% if perms.webapp.can_delete_users or request.user.username == 'manager' or request.user.username == 'lead' %}
+        <li class="nav-item">
+          <a class="nav-link active" href="{% url 'webapp:user_delete' project.pk %}">Delete User</a>
+        </li>
+    {% endif %}
+
     {% endif %}
 {% endblock %}
 {% block content %}
@@ -19,6 +32,11 @@
     <p><b>Description:</b> {{ project.description }}</p>
     <p><b>Started at:</b>{{ project.started_at}}</p>
     <p><b>Deadline:</b>{{ project.finished_at}}</p>
+    <p><b>Dene:</b>{{ project.user.username}}</p>
+    <br><br><h3>Currently working on Project:</h3><br/>
+    <p>{% for u in project.user.all %}</p>
+        <b>{{ u }}</b>
+    <p>{% endfor %}</p>
     <br><br><h3>Project's Trackers:</h3><br/>
     <p>{% for pro in project.projects_fk.all %}
         <hr>
