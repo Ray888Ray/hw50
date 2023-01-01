@@ -1,31 +1,49 @@
 {% extends 'base.html' %}
 {% block menu %}
+
     {% if request.user.is_authenticated %}
-    <li class="nav-item">
-      <a class="nav-link active" href="{% url 'webapp:project_update' project.pk %}">Update</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link active" href="{% url 'webapp:add' project.pk %}">Add tracker</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link active" href="{% url 'webapp:project_delete' project.pk %}">Delete</a>
-    </li>
 
-    {% if perms.webapp.can_add_users or request.user.username == 'manager' or request.user.username == 'lead'  %}
-        <li class="nav-item">
-          <a class="nav-link active" href="{% url 'webapp:user_add' project.pk %}">Add User</a>
-        </li>
+
+        {% if perms.webapp.change_project %}
+            <li class="nav-item">
+              <a class="nav-link active" href="{% url 'webapp:project_update' project.pk %}">Update</a>
+            </li>
+        {% endif %}
+
+        {% if perms.webapp.add_tracker and request.user in project.user.all %}
+            <li class="nav-item">
+              <a class="nav-link active" href="{% url 'webapp:add' project.pk %}">Add tracker</a>
+            </li>
+        {% endif %}
+
+        {% if perms.webapp.delete_project %}
+            <li class="nav-item">
+              <a class="nav-link active" href="{% url 'webapp:project_delete' project.pk %}">Delete</a>
+            </li>
+        {% endif %}
+
+
     {% endif %}
 
-    {% if perms.webapp.can_delete_users or request.user.username == 'manager' or request.user.username == 'lead' %}
-        <li class="nav-item">
-          <a class="nav-link active" href="{% url 'webapp:user_delete' project.pk %}">Delete User</a>
-        </li>
-    {% endif %}
 
-    {% endif %}
+        {% if perms.webapp.can_add_users and request.user in project.user.all %}
+            <li class="nav-item">
+              <a class="nav-link active" href="{% url 'webapp:user_add' project.pk %}">Add User</a>
+            </li>
+        {% endif %}
+
+        {% if perms.webapp.can_delete_users and request.user in project.user.all %}
+            <li class="nav-item">
+              <a class="nav-link active" href="{% url 'webapp:user_delete' project.pk %}">Delete User</a>
+            </li>
+        {% endif %}
+
+
 {% endblock %}
+
 {% block content %}
+
+
 {% csrf_token %}
     <h1>Information:</h1><br>
     <p><b>Title:</b> {{ project.title }}</p>
@@ -35,18 +53,28 @@
     <p><b>Dene:</b>{{ project.user.username}}</p>
     <br><br><h3>Currently working on Project:</h3><br/>
     <p>{% for u in project.user.all %}</p>
-        <b>{{ u }}</b>
+        <b>{{ u.username }}</b>
     <p>{% endfor %}</p>
     <br><br><h3>Project's Trackers:</h3><br/>
     <p>{% for pro in project.projects_fk.all %}
         <hr>
         <h2>{{ pro.short_description }}</h2>
         <br>
+
         {% if request.user.is_authenticated %}
+
         <a href="{% url 'webapp:info' pro.pk%}" class="px-2 fs-1" ><i class="bi bi-info-circle-fill"></i></a>
-        <a href="{% url 'webapp:update' pro.pk  %}" class="px-2 fs-1"><i class="bi bi-pencil-square"></i></a>
-        <a href="{% url 'webapp:delete' project.pk %}" class="px-2 fs-1"><i class="bi bi-trash-fill"></i></a>
+
+            {% if perms.webapp.change_tracker and request.user in project.user.all %}
+                <a href="{% url 'webapp:update' pro.pk  %}" class="px-2 fs-1"><i class="bi bi-pencil-square"></i></a>
+            {% endif %}
+
+            {% if perms.webapp.delete_tracker and request.user in project.user.all %}
+                <a href="{% url 'webapp:delete' project.pk %}" class="px-2 fs-1"><i class="bi bi-trash-fill"></i></a>
+            {% endif %}
+
         {% endif %}
+
         {% if not forloop.last %}<br><br> {% endif %}
     <p>{% endfor %}</p>
 {% endblock %}
