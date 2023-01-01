@@ -61,29 +61,37 @@ class ProjectView(DetailView):
         return context
 
 
-class ProjectAddView(LoginRequiredMixin, CreateView):
+class ProjectAddView(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
 
     template_name = 'project/add.html'
     model = Project
     form_class = ProjectForm
+    permission_required = 'webapp.add_project'
+
+    def form_valid(self, form):
+        self.object = form.save()
+        self.object.user.add(self.request.user)
+        return super().form_valid(form)
 
     def get_success_url(self):
         return reverse('webapp:project_info', kwargs={'pk': self.object.pk})
 
 
-class ProjectUpdateView(LoginRequiredMixin, UpdateView):
+class ProjectUpdateView(LoginRequiredMixin, PermissionRequiredMixin, UpdateView):
     model = Project
     template_name = 'project/update.html'
     form_class = ProjectForm
     context_key = 'project'
+    permission_required = 'webapp.change_project'
 
     def get_success_url(self):
         return reverse('webapp:project_info', kwargs={'pk': self.object.pk})
 
 
-class ProjectDeleteView(LoginRequiredMixin, DeleteView):
+class ProjectDeleteView(LoginRequiredMixin, PermissionRequiredMixin, DeleteView):
     template_name = 'project/delete.html'
     success_url = reverse_lazy('project_index')
+    permission_required = 'webapp.delete_project'
 
     def get(self, request, *args, **kwargs):
         project = get_object_or_404(Project, pk=kwargs['pk'])
@@ -100,15 +108,12 @@ class AddUser(PermissionRequiredMixin, UpdateView):
     permission_required = 'webapp.can_add_users'
 
     def has_permission(self):
-        return super().has_permission() or Project.user == self.request.user
+        return super().has_permission() and self.request.user in self.get_object().user.all()
 
-    def form_valid(self, form):
-        project = get_object_or_404(Project, pk=self.kwargs.get('pk'))
-        form.instance = project.user
-        users = form.cleaned_data['user']
-        for user in users:
-            project.user.add(user)
-        return redirect('webapp:project_info',  pk=self.kwargs.get('pk'))
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs['user'] = self.request.user
+        return kwargs
 
     def get_success_url(self):
         return reverse('webapp:project_info', kwargs={'pk': self.object.pk})
@@ -122,18 +127,15 @@ class DeleteUser(PermissionRequiredMixin, UpdateView):
     permission_required = 'webapp.can_delete_users'
 
     def has_permission(self):
-        return super().has_permission() or self.get_object().user.name == self.request.user
+        return super().has_permission() and self.request.user in self.get_object().user.all()
 
-    def form_valid(self, form):
-        projects = get_object_or_404(Project, pk=self.kwargs.get('pk'))
-        form.instance = projects.user
-        u = form.cleaned_data['user']
-        for user in u:
-            projects.user.remove(user)
-        return redirect('webapp:project_info',  pk=self.kwargs.get('pk'))
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs['user'] = self.request.user
+        return kwargs
 
     def get_success_url(self):
-        return reverse('webapp:project_index', kwargs={'pk': self.object.pk})
+        return reverse_lazy('webapp:project_index')
 
 
 
