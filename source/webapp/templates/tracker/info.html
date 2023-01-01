@@ -8,7 +8,7 @@
       <a class="nav-link active" href="{% url 'webapp:update' tracker.pk %}">Update</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link active" href="{% url 'webapp:delete' tracker.pk %}">Delete</a>
+      <a class="nav-link active" href="{% url 'webapp:delete' tracker.projects_fk.pk %}">Delete</a>
     </li>
     {% endif %}
 {% endblock %}
