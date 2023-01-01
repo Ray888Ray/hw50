@@ -1,7 +1,7 @@
 from django import forms
 from django.forms import widgets, ValidationError
 from webapp.models import Tracker, Project
-
+from django.contrib.auth import get_user_model
 
 class TackerForm(forms.ModelForm):
     class Meta:
@@ -39,10 +39,25 @@ class TackerForm(forms.ModelForm):
 
 
 class ProjectUserForm(forms.ModelForm):
+
+    def __init__(self, *args, **kwargs):
+        self.user = kwargs.pop('user')
+        super().__init__(*args, **kwargs)
+        self.fields['user'].queryset = get_user_model().objects.exclude(pk=self.user.pk)
+
     class Meta:
         model = Project
         fields = ['user']
         widgets = {'user': widgets.CheckboxSelectMultiple}
+
+    def save(self, commit=True):
+        project = super().save(commit=commit)
+
+        if commit:
+            project.user.add(self.user)
+            project.save()
+
+        return project
 
 
 class ProjectForm(forms.ModelForm):
