@@ -1,0 +1,429 @@
+[
+{
+  "model": "auth.group",
+  "pk": 1,
+  "fields": {
+    "name": "Project Manager",
+    "permissions": [
+      [
+        "can_see_users",
+        "accounts",
+        "profile"
+      ],
+      [
+        "add_project",
+        "webapp",
+        "project"
+      ],
+      [
+        "can add users",
+        "webapp",
+        "project"
+      ],
+      [
+        "can delete users",
+        "webapp",
+        "project"
+      ],
+      [
+        "change_project",
+        "webapp",
+        "project"
+      ],
+      [
+        "delete_project",
+        "webapp",
+        "project"
+      ],
+      [
+        "add_tracker",
+        "webapp",
+        "tracker"
+      ],
+      [
+        "change_tracker",
+        "webapp",
+        "tracker"
+      ],
+      [
+        "delete_tracker",
+        "webapp",
+        "tracker"
+      ]
+    ]
+  }
+},
+{
+  "model": "auth.group",
+  "pk": 2,
+  "fields": {
+    "name": "Team Lead",
+    "permissions": [
+      [
+        "can_see_users",
+        "accounts",
+        "profile"
+      ],
+      [
+        "can add users",
+        "webapp",
+        "project"
+      ],
+      [
+        "can delete users",
+        "webapp",
+        "project"
+      ],
+      [
+        "add_tracker",
+        "webapp",
+        "tracker"
+      ],
+      [
+        "change_tracker",
+        "webapp",
+        "tracker"
+      ],
+      [
+        "delete_tracker",
+        "webapp",
+        "tracker"
+      ]
+    ]
+  }
+},
+{
+  "model": "auth.group",
+  "pk": 3,
+  "fields": {
+    "name": "Dev",
+    "permissions": [
+      [
+        "add_trackertype",
+        "webapp",
+        "trackertype"
+      ],
+      [
+        "change_trackertype",
+        "webapp",
+        "trackertype"
+      ]
+    ]
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$K8KyZGzBfKfgy2gmriJhBl$ZZs8Zv/uF/BPejPmkHFrEDFCiwkS08FCNNhpvFb14Ww=",
+    "last_login": "2023-01-09T12:50:43.914Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2022-11-18T09:02:01.072Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$raYJxp8C4JIWcKd5Ma85yZ$kVfy+q+2ssgKmeMql3ATIKQt8DJEqZs17OZDPmTSNDA=",
+    "last_login": "2023-01-09T12:44:56.047Z",
+    "is_superuser": false,
+    "username": "test",
+    "first_name": "test",
+    "last_name": "1",
+    "email": "test@exmp.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-12-22T10:07:20Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$pTkiCBBWRTMkbGzKnMbN5Q$sNoWxuWmKCtX/l8Dym6Shux/81TSJuHI4QqiKzyGEc0=",
+    "last_login": "2022-12-22T10:53:08.185Z",
+    "is_superuser": false,
+    "username": "test2",
+    "first_name": "test",
+    "last_name": "2",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-12-22T10:53:07.919Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$kZPGWkxxjjOLlQENVGlV7b$1r7qPPuhAtLgbZI9nfjtci8g27Al4BZD/n2yqewi0kQ=",
+    "last_login": "2022-12-22T11:54:23.899Z",
+    "is_superuser": false,
+    "username": "test3",
+    "first_name": "test",
+    "last_name": "",
+    "email": "exmp@exmp.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-12-22T11:54:23.718Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$i1eKxO95kDxfu1MHHhHDRv$dqgAX7szy1a1MlT3G7bDEHswZHbUkDQFeBOVNDIbeh0=",
+    "last_login": "2022-12-22T11:56:23.556Z",
+    "is_superuser": false,
+    "username": "test4",
+    "first_name": "test",
+    "last_name": "",
+    "email": "jojo_reference@example.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-12-22T11:56:23.384Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 6,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$44ui0ca1KmSpCs4lGz4TtZ$9onFePl24ZUp/tNXIUayv7K3pl3XCHKKNWvqjNBEp40=",
+    "last_login": "2023-01-09T12:51:24.839Z",
+    "is_superuser": false,
+    "username": "manager",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-12-23T16:48:27Z",
+    "groups": [
+      [
+        "Project Manager"
+      ]
+    ],
+    "user_permissions": [
+      [
+        "add_project",
+        "webapp",
+        "project"
+      ],
+      [
+        "can add users",
+        "webapp",
+        "project"
+      ],
+      [
+        "can delete users",
+        "webapp",
+        "project"
+      ],
+      [
+        "can_add_users",
+        "webapp",
+        "project"
+      ],
+      [
+        "can_delete_users",
+        "webapp",
+        "project"
+      ],
+      [
+        "change_project",
+        "webapp",
+        "project"
+      ],
+      [
+        "delete_project",
+        "webapp",
+        "project"
+      ],
+      [
+        "view_project",
+        "webapp",
+        "project"
+      ],
+      [
+        "add_status",
+        "webapp",
+        "status"
+      ],
+      [
+        "change_status",
+        "webapp",
+        "status"
+      ],
+      [
+        "delete_status",
+        "webapp",
+        "status"
+      ],
+      [
+        "view_status",
+        "webapp",
+        "status"
+      ],
+      [
+        "add_tracker",
+        "webapp",
+        "tracker"
+      ],
+      [
+        "change_tracker",
+        "webapp",
+        "tracker"
+      ],
+      [
+        "delete_tracker",
+        "webapp",
+        "tracker"
+      ],
+      [
+        "view_tracker",
+        "webapp",
+        "tracker"
+      ],
+      [
+        "add_trackertype",
+        "webapp",
+        "trackertype"
+      ],
+      [
+        "change_trackertype",
+        "webapp",
+        "trackertype"
+      ],
+      [
+        "delete_trackertype",
+        "webapp",
+        "trackertype"
+      ],
+      [
+        "view_trackertype",
+        "webapp",
+        "trackertype"
+      ],
+      [
+        "add_type",
+        "webapp",
+        "type"
+      ],
+      [
+        "change_type",
+        "webapp",
+        "type"
+      ],
+      [
+        "delete_type",
+        "webapp",
+        "type"
+      ],
+      [
+        "view_type",
+        "webapp",
+        "type"
+      ],
+      [
+        "add_user",
+        "webapp",
+        "user"
+      ],
+      [
+        "change_user",
+        "webapp",
+        "user"
+      ],
+      [
+        "delete_user",
+        "webapp",
+        "user"
+      ],
+      [
+        "view_user",
+        "webapp",
+        "user"
+      ]
+    ]
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 7,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$PTnD3AC0WYHUL0JAn12XMP$H76JCoZhjdDb+PARoftB+vk3OvlgZPthqVNkKuLKxdQ=",
+    "last_login": "2023-01-01T16:34:21.814Z",
+    "is_superuser": false,
+    "username": "lead",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-12-23T16:48:53Z",
+    "groups": [
+      [
+        "Team Lead"
+      ]
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 8,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$qsypcM4sTFQi5JaqBkrdjL$WYizYvpUhb4KYLMpNrjyB+z59dUplfkPWZ1TL647LV0=",
+    "last_login": "2023-01-01T16:19:02.091Z",
+    "is_superuser": false,
+    "username": "dev",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-12-23T16:49:14Z",
+    "groups": [
+      [
+        "Dev"
+      ]
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 9,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$yLdcDEN1nkF8JqpYc6SK7Y$7e3Gjt2kHnuXSoJL7M7ChIkqgJOvrvRP9zh3akZAuBs=",
+    "last_login": "2023-01-09T08:06:17.353Z",
+    "is_superuser": false,
+    "username": "user",
+    "first_name": "user",
+    "last_name": "",
+    "email": "dqw@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-01-02T12:18:01.006Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
