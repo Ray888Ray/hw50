@@ -1,8 +1,11 @@
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login, logout, get_user_model
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.shortcuts import render, redirect, reverse
-from accounts.forms import MyUserCreationForm, UserCreationForm
+from django.views.generic.list import MultipleObjectMixin
+from accounts.forms import MyUserCreationForm
 from django.contrib.auth.models import User
-from django.views.generic import CreateView
+from django.views.generic import CreateView, DetailView, ListView
+from .models import Profile
 
 
 class RegisterView(CreateView):
@@ -12,6 +15,7 @@ class RegisterView(CreateView):
 
     def form_valid(self, form):
         user = form.save()
+        Profile.objects.create(user=user)
         login(self.request, user)
         return redirect(self.get_success_url())
 
@@ -22,17 +26,6 @@ class RegisterView(CreateView):
         if not next_url:
             next_url = reverse('webapp:project_index')
         return next_url
-
-# def register_view(request, *args, **kwargs):
-#     if request.method == 'POST':
-#         form = MyUserCreationForm(data=request.POST)
-#         if form.is_valid():
-#             user = form.save()
-#             login(request, user)
-#             return redirect('webapp:project_index')
-#     else:
-#         form = MyUserCreationForm()
-#     return render(request, 'user_create.html', {'form': form})
 
 
 def login_view(request):
@@ -52,3 +45,24 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return redirect('webapp:project_index')
+
+
+class UserDetailView(LoginRequiredMixin, DetailView, MultipleObjectMixin):
+    model = get_user_model()
+    template_name = 'user_detail.html'
+    context_object_name = 'user_obj'
+    paginate_related_by = 3
+
+    def get_context_data(self, **kwargs):
+        project = self.get_object().user.all()
+        return super().get_context_data(object_list=project, **kwargs)
+
+
+class UsersList(PermissionRequiredMixin, ListView):
+    model = get_user_model()
+    template_name = 'user_list.html'
+    context_object_name = 'user_obj'
+    permission_required = 'accounts.can_see_users'
+
+    def has_permission(self):
+        return super().has_permission()
