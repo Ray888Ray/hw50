@@ -1,10 +1,265 @@
 [
 {
+  "model": "webapp.status",
+  "pk": 1,
+  "fields": {
+    "status_name": "New"
+  }
+},
+{
+  "model": "webapp.status",
+  "pk": 2,
+  "fields": {
+    "status_name": "In Progress"
+  }
+},
+{
+  "model": "webapp.status",
+  "pk": 3,
+  "fields": {
+    "status_name": "Done"
+  }
+},
+{
+  "model": "webapp.type",
+  "pk": 1,
+  "fields": {
+    "type_name": "Bug"
+  }
+},
+{
+  "model": "webapp.type",
+  "pk": 2,
+  "fields": {
+    "type_name": "Enhancement"
+  }
+},
+{
+  "model": "webapp.type",
+  "pk": 3,
+  "fields": {
+    "type_name": "Task"
+  }
+},
+{
+  "model": "webapp.type",
+  "pk": 5,
+  "fields": {
+    "type_name": "Test"
+  }
+},
+{
+  "model": "webapp.tracker",
+  "pk": 10,
+  "fields": {
+    "projects_fk": 3,
+    "status": 1,
+    "short_description": "Test555555",
+    "content": "enim facilisis gravida neque convallis a cras semper auctor neque vitae tempus quam pellentesque nec nam aliquam sem et tortor consequat id porta nibh venenatis cras sed felis eget velit aliquet sagittis id consectetur purus ut faucibus pulvinar elementum integer enim neque volutpat ac tincidunt vitae semper quis lectus nulla at volutpat diam ut venenatis tellus in metus vulputate eu scelerisque felis imperdiet proin fermentum leo vel orci porta non pulvinar neque laoreet suspendisse interdum",
+    "created_at": "2022-11-22",
+    "updated_at": "2023-01-01",
+    "type": [
+      3
+    ]
+  }
+},
+{
+  "model": "webapp.tracker",
+  "pk": 25,
+  "fields": {
+    "projects_fk": 3,
+    "status": 1,
+    "short_description": "Test11",
+    "content": "gfcgcgccghcghcgeqweqweqwhghv",
+    "created_at": "2022-11-29",
+    "updated_at": "2022-11-29",
+    "type": [
+      3
+    ]
+  }
+},
+{
+  "model": "webapp.tracker",
+  "pk": 29,
+  "fields": {
+    "projects_fk": 3,
+    "status": 1,
+    "short_description": "bug",
+    "content": "asdasd",
+    "created_at": "2022-11-29",
+    "updated_at": "2022-11-29",
+    "type": [
+      3
+    ]
+  }
+},
+{
+  "model": "webapp.tracker",
+  "pk": 52,
+  "fields": {
+    "projects_fk": 13,
+    "status": 2,
+    "short_description": "Test7777777",
+    "content": "Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999",
+    "created_at": "2022-12-09",
+    "updated_at": "2022-12-09",
+    "type": [
+      2
+    ]
+  }
+},
+{
+  "model": "webapp.tracker",
+  "pk": 55,
+  "fields": {
+    "projects_fk": 13,
+    "status": 1,
+    "short_description": "Test9999999",
+    "content": "Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999vv",
+    "created_at": "2022-12-09",
+    "updated_at": "2022-12-09",
+    "type": [
+      2
+    ]
+  }
+},
+{
+  "model": "webapp.tracker",
+  "pk": 56,
+  "fields": {
+    "projects_fk": 13,
+    "status": 1,
+    "short_description": "Test9999999",
+    "content": "Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999",
+    "created_at": "2022-12-09",
+    "updated_at": "2022-12-09",
+    "type": [
+      2,
+      5
+    ]
+  }
+},
+{
+  "model": "webapp.tracker",
+  "pk": 57,
+  "fields": {
+    "projects_fk": 13,
+    "status": 2,
+    "short_description": "Test9999999",
+    "content": "Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999Test9999999",
+    "created_at": "2022-12-09",
+    "updated_at": "2022-12-09",
+    "type": [
+      2,
+      3
+    ]
+  }
+},
+{
+  "model": "webapp.project",
+  "pk": 3,
+  "fields": {
+    "is_deleted": false,
+    "title": "Project3",
+    "description": "wqeqw",
+    "started_at": "2022-01-01",
+    "finished_at": "2023-05-04",
+    "user": []
+  }
+},
+{
+  "model": "webapp.project",
+  "pk": 11,
+  "fields": {
+    "is_deleted": false,
+    "title": "Project4",
+    "description": "Project 1Project 1Project 1Project 1Project 1Project 1Project 1Project 1Project 1Project 1Project 1Project 1Project 1Project 1Project 1Project 1Project 1",
+    "started_at": "2022-03-01",
+    "finished_at": "2024-02-02",
+    "user": []
+  }
+},
+{
+  "model": "webapp.project",
+  "pk": 12,
+  "fields": {
+    "is_deleted": false,
+    "title": "Project5(delete)",
+    "description": "dwqdwqdwq",
+    "started_at": "2022-01-01",
+    "finished_at": "2027-03-04",
+    "user": [
+      2,
+      4,
+      5
+    ]
+  }
+},
+{
+  "model": "webapp.project",
+  "pk": 13,
+  "fields": {
+    "is_deleted": false,
+    "title": "Project6",
+    "description": "11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111",
+    "started_at": "2022-01-01",
+    "finished_at": "2028-10-15",
+    "user": []
+  }
+},
+{
+  "model": "webapp.project",
+  "pk": 15,
+  "fields": {
+    "is_deleted": false,
+    "title": "1232312",
+    "description": "1232312123231212323121232312123231212323121232312123231212323121232312123231212323121232312123231212323121232312123231212323121232312123231212323121232312123231212323121232312123231212323121232312123231212323121232312123231212323121232312123231212323121232312123231212323121232312123231212323121232312123231212323121232312123231212323121232312123231212323121232312123231212323121232312123231212323121232312123231212323121232312123231212323121232312123231212323121232312123231212323121232312123231212323121232312",
+    "started_at": "2022-01-01",
+    "finished_at": null,
+    "user": [
+      2,
+      3,
+      6,
+      7
+    ]
+  }
+},
+{
+  "model": "webapp.project",
+  "pk": 16,
+  "fields": {
+    "is_deleted": false,
+    "title": "qedwqdwq",
+    "description": "qedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwq",
+    "started_at": "2023-01-01",
+    "finished_at": null,
+    "user": [
+      1
+    ]
+  }
+},
+{
+  "model": "webapp.project",
+  "pk": 17,
+  "fields": {
+    "is_deleted": false,
+    "title": "dqwdqwdqwdqw",
+    "description": "qwdwqdqwdqwdqwdwqdqwdqwdqwdwqdqwdqwdqwdwqdqwdqwdqwdwqdqwdqwdqwdwqdqwdqwdqwdwqdqwdqwdqwdwqdqwdqwdqwdwqdqwdqwdqwdwqdqwdqwdqwdwqdqwdqwdqwdwqdqwdqwdqwdwqdqwdqwdqwdwqdqwdqwdqwdwqdqwdqwdqwdwqdqwdqwdqwdwqdqwdqwdqwdwqdqwdqwdqwdwqdqwdqwdqwdwqdqwdqwdqwdwqdqwdqwdqwdwqdqwdqwdqwdwqdqwdqwdqwdwqdqwdqwd",
+    "started_at": "2023-01-01",
+    "finished_at": null,
+    "user": [
+      6,
+      7,
+      8
+    ]
+  }
+},
+{
   "model": "auth.user",
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$390000$K8KyZGzBfKfgy2gmriJhBl$ZZs8Zv/uF/BPejPmkHFrEDFCiwkS08FCNNhpvFb14Ww=",
-    "last_login": "2022-12-22T12:08:13.846Z",
+    "last_login": "2023-01-01T16:23:26.339Z",
     "is_superuser": true,
     "username": "admin",
     "first_name": "",
@@ -22,7 +277,7 @@
   "pk": 2,
   "fields": {
     "password": "pbkdf2_sha256$390000$raYJxp8C4JIWcKd5Ma85yZ$kVfy+q+2ssgKmeMql3ATIKQt8DJEqZs17OZDPmTSNDA=",
-    "last_login": "2022-12-22T11:58:21.698Z",
+    "last_login": "2023-01-01T16:18:39.841Z",
     "is_superuser": false,
     "username": "test",
     "first_name": "test",
@@ -86,6 +341,95 @@
     "is_active": true,
     "date_joined": "2022-12-22T11:56:23.384Z",
     "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 6,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$44ui0ca1KmSpCs4lGz4TtZ$9onFePl24ZUp/tNXIUayv7K3pl3XCHKKNWvqjNBEp40=",
+    "last_login": "2023-01-01T16:40:13.833Z",
+    "is_superuser": false,
+    "username": "manager",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-12-23T16:48:27Z",
+    "groups": [
+      1
+    ],
+    "user_permissions": [
+      41,
+      49,
+      50,
+      51,
+      52,
+      42,
+      43,
+      44,
+      33,
+      34,
+      35,
+      36,
+      25,
+      26,
+      27,
+      28,
+      37,
+      38,
+      39,
+      40,
+      29,
+      30,
+      31,
+      32,
+      45,
+      46,
+      47,
+      48
+    ]
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 7,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$PTnD3AC0WYHUL0JAn12XMP$H76JCoZhjdDb+PARoftB+vk3OvlgZPthqVNkKuLKxdQ=",
+    "last_login": "2023-01-01T16:34:21.814Z",
+    "is_superuser": false,
+    "username": "lead",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-12-23T16:48:53Z",
+    "groups": [
+      2
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 8,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$qsypcM4sTFQi5JaqBkrdjL$WYizYvpUhb4KYLMpNrjyB+z59dUplfkPWZ1TL647LV0=",
+    "last_login": "2023-01-01T16:19:02.091Z",
+    "is_superuser": false,
+    "username": "dev",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-12-23T16:49:14Z",
+    "groups": [
+      3
+    ],
     "user_permissions": []
   }
 }

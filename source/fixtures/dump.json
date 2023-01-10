@@ -50,107 +50,15 @@
 },
 {
   "model": "webapp.tracker",
-  "pk": 5,
-  "fields": {
-    "projects_fk": 1,
-    "status": 1,
-    "short_description": "Test1",
-    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse risus lacus, placerat rhoncus lacinia porta, laoreet ut justo. Duis malesuada dui id mauris imperdiet molestie. Nullam placerat velit scelerisque, venenatis urna et, vehicula metus. Mauris tristique commodo risus quis congue.",
-    "created_at": "2022-11-18",
-    "updated_at": "2022-11-22",
-    "type": [
-      2,
-      3
-    ]
-  }
-},
-{
-  "model": "webapp.tracker",
-  "pk": 6,
-  "fields": {
-    "projects_fk": 2,
-    "status": 1,
-    "short_description": "Test2",
-    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mollis imperdiet odio quis aliquam. Etiam gravida eros ipsum, a laoreet nibh venenatis non. Nullam vel eleifend lectus. Vestibulum sit amet elit eget nunc tempor aliquam at sed ipsum. Suspendisse potenti. Duis accumsan magna eget dignissim posuere. Donec consequat turpis velit, a viverra dui aliquam a. Maecenas a lacinia sem, at aliquam est. Morbi tristique turpis massa, ac luctus nibh egestas vel. Nam sed finibus neque, ac bibendum lectus. Morbi pulvinar magna vel aliquet dapibus. Aliquam at aliquet felis. Aenean ultricies.",
-    "created_at": "2022-11-18",
-    "updated_at": "2022-11-22",
-    "type": [
-      2
-    ]
-  }
-},
-{
-  "model": "webapp.tracker",
-  "pk": 7,
-  "fields": {
-    "projects_fk": 1,
-    "status": 1,
-    "short_description": "Test3",
-    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel iaculis velit, vel laoreet neque. Mauris quis sollicitudin metus, ac mollis massa. Praesent vel lorem non metus finibus fringilla. Praesent sit amet varius sem. Nullam quis dolor tortor. Integer consequat imperdiet metus, a venenatis nisi iaculis et. Curabitur nisi diam, gravida eu risus sed, maximus tristique sapien. Nam ultrices convallis lobortis. Mauris tortor ante, congue id egestas non, pharetra quis.",
-    "created_at": "2022-11-18",
-    "updated_at": "2022-11-22",
-    "type": [
-      1
-    ]
-  }
-},
-{
-  "model": "webapp.tracker",
-  "pk": 8,
-  "fields": {
-    "projects_fk": 1,
-    "status": 1,
-    "short_description": "Tets4",
-    "content": "molestie risus fermentum. Cras eget molestie elit. Aliquam vitae metus eu diam mattis volutpat. Curabitur egestas nunc vitae elit vehicula, eget viverra enim venenatis. Aliquam non tortor in nisi commodo volutpat eget id leo. Nam volutpat, nibh ac gravida vestibulum, tellus nibh egestas ligula, eu suscipit quam turpis at nisl.\r\n\r\nProin pellentesque leo accumsan faucibus convallis. Duis lorem magna, porttitor eget vehicula in, consectetur id enim. Nullam sodales eu metus non elementum. Aenean porta augue sit amet mauris bibendum, non porttitor dolor ullamcorper. Morbi elementum eu enim vel porttitor. Aliquam non condimentum lacus. Nulla vehicula ac dui quis fermentum. Donec euismod aliquet quam ac blandit. Aliquam facilisis felis purus, ornare placerat libero interdum quis. In ut neque mollis, viverra metus non, tristique nibh. In quis pharetra felis, sed dignissim ipsum. In consequat sodales lectus non dignissim. Nulla condimentum dignissim efficitur. Maecenas eget sem non urna mattis porttitor.",
-    "created_at": "2022-11-18",
-    "updated_at": "2022-11-22",
-    "type": [
-      3
-    ]
-  }
-},
-{
-  "model": "webapp.tracker",
   "pk": 10,
   "fields": {
     "projects_fk": 3,
     "status": 1,
-    "short_description": "Test5",
+    "short_description": "Test555555",
     "content": "enim facilisis gravida neque convallis a cras semper auctor neque vitae tempus quam pellentesque nec nam aliquam sem et tortor consequat id porta nibh venenatis cras sed felis eget velit aliquet sagittis id consectetur purus ut faucibus pulvinar elementum integer enim neque volutpat ac tincidunt vitae semper quis lectus nulla at volutpat diam ut venenatis tellus in metus vulputate eu scelerisque felis imperdiet proin fermentum leo vel orci porta non pulvinar neque laoreet suspendisse interdum",
     "created_at": "2022-11-22",
-    "updated_at": "2022-11-22",
+    "updated_at": "2023-01-01",
     "type": [
-      3
-    ]
-  }
-},
-{
-  "model": "webapp.tracker",
-  "pk": 11,
-  "fields": {
-    "projects_fk": 1,
-    "status": 1,
-    "short_description": "Test6",
-    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Velit egestas dui id ornare arcu odio ut. Sed augue lacus viverra vitae congue eu consequat ac felis. Placerat duis ultricies lacus sed. Habitasse platea dictumst quisque sagittis. Gravida arcu ac tortor dignissim. Pellentesque eu tincidunt tortor aliquam nulla facilisi cras. Est lorem ipsum dolor sit amet. Aliquam nulla facilisi cras fermentum odio. Lacus suspendisse faucibus interdum posuere. Maecenas pharetra convallis posuere morbi leo urna. Quam elementum pulvinar etiam non quam lacus suspendisse faucibus interdum. Malesuada fames ac turpis egestas maecenas. Eu volutpat odio facilisis mauris sit amet. Lacus luctus accumsan tortor posuere. Nunc mi ipsum faucibus vitae aliquet.\r\n\r\nEtiam erat velit scelerisque in. Ullamcorper sit amet risus nullam eget. Nibh mauris cursus mattis molestie a iaculis at erat pellentesque. Dictum sit amet justo donec enim. Quam lacus suspendisse faucibus interdum posuere. Eu augue ut lectus arcu bibendum at. Tellus id interdum velit laoreet. Curabitur vitae nunc sed velit dignissim sodales ut eu. Enim ut sem viverra aliquet eget sit amet tellus. Nisl tincidunt eget nullam non nisi est sit. Viverra tellus in hac habitasse platea dictumst vestibulum. Mi sit amet mauris commodo. Scelerisque eleifend donec pretium vulputate sapien nec sagittis. Aliquet nec ullamcorper sit amet risus nullam eget.",
-    "created_at": "2022-11-22",
-    "updated_at": "2022-11-22",
-    "type": [
-      2
-    ]
-  }
-},
-{
-  "model": "webapp.tracker",
-  "pk": 12,
-  "fields": {
-    "projects_fk": 2,
-    "status": 1,
-    "short_description": "Test7",
-    "content": "vitae purus faucibus ornare suspendisse sed nisi lacus sed viverra tellus in hac habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at augue eget arcu dictum varius duis at consectetur lorem donec massa sapien faucibus et molestie ac feugiat sed lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra accumsan in nisl nisi scelerisque eu ultrices vitae auctor eu augue ut lectus arcu bibendum at varius vel pharetra vel turpis nunc eget lorem dolor sed viverra ipsum nunc aliquet bibendum enim facilisis gravida neque convallis a cras semper auctor neque vitae tempus quam pellentesque nec nam aliquam sem et tortor consequat id porta nibh venenatis cras sed felis eget velit aliquet sagittis id consectetur purus ut faucibus pulvinar elementum integer enim neque volutpat ac tincidunt vitae semper quis lectus nulla at volutpat diam ut venenatis tellus in",
-    "created_at": "2022-11-22",
-    "updated_at": "2022-11-22",
-    "type": [
-      2,
       3
     ]
   }
@@ -172,22 +80,6 @@
 },
 {
   "model": "webapp.tracker",
-  "pk": 27,
-  "fields": {
-    "projects_fk": 1,
-    "status": 1,
-    "short_description": "Bug",
-    "content": "asdqwdqwdqw",
-    "created_at": "2022-11-29",
-    "updated_at": "2022-11-29",
-    "type": [
-      1,
-      2
-    ]
-  }
-},
-{
-  "model": "webapp.tracker",
   "pk": 29,
   "fields": {
     "projects_fk": 3,
@@ -198,151 +90,6 @@
     "updated_at": "2022-11-29",
     "type": [
       3
-    ]
-  }
-},
-{
-  "model": "webapp.tracker",
-  "pk": 30,
-  "fields": {
-    "projects_fk": 1,
-    "status": 1,
-    "short_description": "Test12",
-    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum viverra egestas mi, in vestibulum erat. Vestibulum consequat augue eu libero dapibus mattis. Aenean iaculis placerat mollis. Integer gravida ipsum non leo consequat, non ullamcorper mauris interdum. Suspendisse auctor nisi sed convallis faucibus. Mauris quis nulla a diam porttitor aliquam eu non magna. Sed lectus ligula, tempus vel porta eget, accumsan nec turpis. Donec efficitur ipsum a erat volutpat, at ultrices elit pharetra. Fusce porttitor, odio at tempus auctor, est ipsum sodales neque, eu viverra neque arcu a diam. Mauris laoreet, nunc a tincidunt hendrerit, enim sapien efficitur dolor, in dictum erat eros a orci. Nullam in justo tristique, semper magna ac, rutrum arcu. Curabitur vel quam vitae nunc finibus interdum. Sed vitae velit et nisl molestie venenatis quis luctus dui. Quisque eget euismod justo, porttitor facilisis sapien. Donec fermentum mi tortor, non molestie ligula aliquam a. Aenean eget urna eu risus lobortis suscipit eu nec sapien.\r\n\r\nNulla interdum mauris eget mollis auctor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aenean ultricies dolor eget ex eleifend tincidunt. Donec congue, sem vel feugiat pellentesque, odio orci sollicitudin lorem, ac accumsan nisl urna vitae nisi. Praesent consequat urna et ligula varius cursus. Praesent porttitor, massa a tincidunt maximus, enim augue maximus ligula, pulvinar vulputate dui risus non justo. Donec laoreet est metus, ut ultricies massa mollis in. Aliquam pulvinar, lorem vel molestie malesuada, est sapien pellentesque ipsum, sed efficitur arcu ex at risus. Cras sollicitudin mattis hendrerit. Aliquam erat volutpat. In tempor at erat sit amet pharetra. Proin aliquet velit at eros pellentesque, a sollicitudin mi ultricies.",
-    "created_at": "2022-11-30",
-    "updated_at": "2022-11-30",
-    "type": [
-      1
-    ]
-  }
-},
-{
-  "model": "webapp.tracker",
-  "pk": 34,
-  "fields": {
-    "projects_fk": 1,
-    "status": 1,
-    "short_description": "Test15",
-    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id porttitor purus, ut porta dolor. Nulla at ex tempus, tempor mauris molestie, lacinia lorem. Nulla vel tincidunt sapien. Aliquam ultricies velit sit amet purus ullamcorper, ut mollis lorem placerat. Morbi vel ultricies arcu. Morbi vitae sem at felis aliquam consectetur. Proin a volutpat massa, non porttitor turpis.\r\n\r\nNam nec egestas eros. Maecenas erat orci, tristique sed est id, posuere rhoncus tortor. Nullam facilisis, neque et sagittis ultricies, leo arcu tristique orci, eget laoreet nunc nisl sed risus. Nullam neque lorem, rhoncus at dignissim ut, tristique at dui. Donec convallis dui.",
-    "created_at": "2022-12-02",
-    "updated_at": "2022-12-02",
-    "type": [
-      2,
-      3
-    ]
-  }
-},
-{
-  "model": "webapp.tracker",
-  "pk": 35,
-  "fields": {
-    "projects_fk": 3,
-    "status": 1,
-    "short_description": "Task1",
-    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id porttitor purus, ut porta dolor. Nulla at ex tempus, tempor mauris molestie, lacinia lorem. Nulla vel tincidunt sapien. Aliquam ultricies velit sit amet purus ullamcorper, ut mollis lorem placerat. Morbi vel ultricies arcu. Morbi vitae sem at felis aliquam consectetur. Proin a volutpat massa, non porttitor turpis.\r\n\r\nNam nec egestas eros. Maecenas erat orci, tristique sed est id, posuere rhoncus tortor. Nullam facilisis, neque et sagittis ultricies, leo arcu tristique orci, eget laoreet nunc nisl sed risus. Nullam neque lorem, rhoncus at dignissim ut, tristique at dui. Donec convallis dui.",
-    "created_at": "2022-12-02",
-    "updated_at": "2022-12-02",
-    "type": [
-      2,
-      3
-    ]
-  }
-},
-{
-  "model": "webapp.tracker",
-  "pk": 36,
-  "fields": {
-    "projects_fk": 1,
-    "status": 1,
-    "short_description": "Task2",
-    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id porttitor purus, ut porta dolor. Nulla at ex tempus, tempor mauris molestie, lacinia lorem. Nulla vel tincidunt sapien. Aliquam ultricies velit sit amet purus ullamcorper, ut mollis lorem placerat. Morbi vel ultricies arcu. Morbi vitae sem at felis aliquam consectetur. Proin a volutpat massa, non porttitor turpis.\r\n\r\nNam nec egestas eros. Maecenas erat orci, tristique sed est id, posuere rhoncus tortor. Nullam facilisis, neque et sagittis ultricies, leo arcu tristique orci, eget laoreet nunc nisl sed risus. Nullam neque lorem, rhoncus at dignissim ut, tristique at dui. Donec convallis dui.",
-    "created_at": "2022-12-02",
-    "updated_at": "2022-12-02",
-    "type": [
-      3
-    ]
-  }
-},
-{
-  "model": "webapp.tracker",
-  "pk": 37,
-  "fields": {
-    "projects_fk": 2,
-    "status": 1,
-    "short_description": "Task3",
-    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id porttitor purus, ut porta dolor. Nulla at ex tempus, tempor mauris molestie, lacinia lorem. Nulla vel tincidunt sapien. Aliquam ultricies velit sit amet purus ullamcorper, ut mollis lorem placerat. Morbi vel ultricies arcu. Morbi vitae sem at felis aliquam consectetur. Proin a volutpat massa, non porttitor turpis.\r\n\r\nNam nec egestas eros. Maecenas erat orci, tristique sed est id, posuere rhoncus tortor. Nullam facilisis, neque et sagittis ultricies, leo arcu tristique orci, eget laoreet nunc nisl sed risus. Nullam neque lorem, rhoncus at dignissim ut, tristique at dui. Donec convallis dui.",
-    "created_at": "2022-12-02",
-    "updated_at": "2022-12-02",
-    "type": [
-      1
-    ]
-  }
-},
-{
-  "model": "webapp.tracker",
-  "pk": 38,
-  "fields": {
-    "projects_fk": 1,
-    "status": 1,
-    "short_description": "Task3",
-    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id porttitor purus, ut porta dolor. Nulla at ex tempus, tempor mauris molestie, lacinia lorem. Nulla vel tincidunt sapien. Aliquam ultricies velit sit amet purus ullamcorper, ut mollis lorem placerat. Morbi vel ultricies arcu. Morbi vitae sem at felis aliquam consectetur. Proin a volutpat massa, non porttitor turpis.\r\n\r\nNam nec egestas eros. Maecenas erat orci, tristique sed est id, posuere rhoncus tortor. Nullam facilisis, neque et sagittis ultricies, leo arcu tristique orci, eget laoreet nunc nisl sed risus. Nullam neque lorem, rhoncus at dignissim ut, tristique at dui. Donec convallis dui.",
-    "created_at": "2022-12-02",
-    "updated_at": "2022-12-02",
-    "type": [
-      1,
-      2,
-      3
-    ]
-  }
-},
-{
-  "model": "webapp.tracker",
-  "pk": 39,
-  "fields": {
-    "projects_fk": 1,
-    "status": 1,
-    "short_description": "Task5",
-    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id porttitor purus, ut porta dolor. Nulla at ex tempus, tempor mauris molestie, lacinia lorem. Nulla vel tincidunt sapien. Aliquam ultricies velit sit amet purus ullamcorper, ut mollis lorem placerat. Morbi vel ultricies arcu. Morbi vitae sem at felis aliquam consectetur. Proin a volutpat massa, non porttitor turpis.\r\n\r\nNam nec egestas eros. Maecenas erat orci, tristique sed est id, posuere rhoncus tortor. Nullam facilisis, neque et sagittis ultricies, leo arcu tristique orci, eget laoreet nunc nisl sed risus. Nullam neque lorem, rhoncus at dignissim ut, tristique at dui. Donec convallis dui.",
-    "created_at": "2022-12-02",
-    "updated_at": "2022-12-02",
-    "type": [
-      1
-    ]
-  }
-},
-{
-  "model": "webapp.tracker",
-  "pk": 41,
-  "fields": {
-    "projects_fk": 2,
-    "status": 1,
-    "short_description": "Task15",
-    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla faucibus accumsan luctus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam venenatis, nisi ac cursus semper, risus lectus convallis enim, vel pulvinar tellus dolor ac diam. Vivamus rutrum elementum ipsum, ut condimentum metus. Phasellus congue gravida orci, id lacinia tortor. Ut pharetra urna nulla, nec tempus diam egestas eget. Cras tincidunt vehicula tellus quis laoreet. Cras consequat convallis velit id pulvinar. In eget ligula felis. Etiam eget nunc.",
-    "created_at": "2022-12-03",
-    "updated_at": "2022-12-03",
-    "type": [
-      1,
-      2,
-      3,
-      5
-    ]
-  }
-},
-{
-  "model": "webapp.tracker",
-  "pk": 42,
-  "fields": {
-    "projects_fk": 1,
-    "status": 1,
-    "short_description": "Task15",
-    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla faucibus accumsan luctus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam venenatis, nisi ac cursus semper, risus lectus convallis enim, vel pulvinar tellus dolor ac diam. Vivamus rutrum elementum ipsum, ut condimentum metus. Phasellus congue gravida orci, id lacinia tortor. Ut pharetra urna nulla, nec tempus diam egestas eget. Cras tincidunt vehicula tellus quis laoreet. Cras consequat convallis velit id pulvinar. In eget ligula felis. Etiam eget nunc.",
-    "created_at": "2022-12-03",
-    "updated_at": "2022-12-03",
-    "type": [
-      1,
-      2,
-      3,
-      5
     ]
   }
 },
@@ -410,35 +157,14 @@
 },
 {
   "model": "webapp.project",
-  "pk": 1,
-  "fields": {
-    "is_deleted": false,
-    "title": "Project1",
-    "description": "12312312",
-    "started_at": "2022-12-05",
-    "finished_at": "2026-12-05"
-  }
-},
-{
-  "model": "webapp.project",
-  "pk": 2,
-  "fields": {
-    "is_deleted": false,
-    "title": "Project2",
-    "description": "wwsdqw",
-    "started_at": "2022-12-06",
-    "finished_at": "2022-12-06"
-  }
-},
-{
-  "model": "webapp.project",
   "pk": 3,
   "fields": {
     "is_deleted": false,
     "title": "Project3",
     "description": "wqeqw",
     "started_at": "2022-01-01",
-    "finished_at": "2023-05-04"
+    "finished_at": "2023-05-04",
+    "user": []
   }
 },
 {
@@ -449,7 +175,8 @@
     "title": "Project4",
     "description": "Project 1Project 1Project 1Project 1Project 1Project 1Project 1Project 1Project 1Project 1Project 1Project 1Project 1Project 1Project 1Project 1Project 1",
     "started_at": "2022-03-01",
-    "finished_at": "2024-02-02"
+    "finished_at": "2024-02-02",
+    "user": []
   }
 },
 {
@@ -460,7 +187,12 @@
     "title": "Project5(delete)",
     "description": "dwqdwqdwq",
     "started_at": "2022-01-01",
-    "finished_at": "2027-03-04"
+    "finished_at": "2027-03-04",
+    "user": [
+      2,
+      4,
+      5
+    ]
   }
 },
 {
@@ -471,7 +203,55 @@
     "title": "Project6",
     "description": "11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111",
     "started_at": "2022-01-01",
-    "finished_at": "2028-10-15"
+    "finished_at": "2028-10-15",
+    "user": []
+  }
+},
+{
+  "model": "webapp.project",
+  "pk": 15,
+  "fields": {
+    "is_deleted": false,
+    "title": "1232312",
+    "description": "1232312123231212323121232312123231212323121232312123231212323121232312123231212323121232312123231212323121232312123231212323121232312123231212323121232312123231212323121232312123231212323121232312123231212323121232312123231212323121232312123231212323121232312123231212323121232312123231212323121232312123231212323121232312123231212323121232312123231212323121232312123231212323121232312123231212323121232312123231212323121232312123231212323121232312123231212323121232312123231212323121232312123231212323121232312",
+    "started_at": "2022-01-01",
+    "finished_at": null,
+    "user": [
+      2,
+      3,
+      6,
+      7
+    ]
+  }
+},
+{
+  "model": "webapp.project",
+  "pk": 16,
+  "fields": {
+    "is_deleted": false,
+    "title": "qedwqdwq",
+    "description": "qedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwqqedwqdwq",
+    "started_at": "2023-01-01",
+    "finished_at": null,
+    "user": [
+      1
+    ]
+  }
+},
+{
+  "model": "webapp.project",
+  "pk": 17,
+  "fields": {
+    "is_deleted": false,
+    "title": "dqwdqwdqwdqw",
+    "description": "qwdwqdqwdqwdqwdwqdqwdqwdqwdwqdqwdqwdqwdwqdqwdqwdqwdwqdqwdqwdqwdwqdqwdqwdqwdwqdqwdqwdqwdwqdqwdqwdqwdwqdqwdqwdqwdwqdqwdqwdqwdwqdqwdqwdqwdwqdqwdqwdqwdwqdqwdqwdqwdwqdqwdqwdqwdwqdqwdqwdqwdwqdqwdqwdqwdwqdqwdqwdqwdwqdqwdqwdqwdwqdqwdqwdqwdwqdqwdqwdqwdwqdqwdqwdqwdwqdqwdqwdqwdwqdqwdqwdqwdwqdqwdqwd",
+    "started_at": "2023-01-01",
+    "finished_at": null,
+    "user": [
+      6,
+      7,
+      8
+    ]
   }
 },
 {
@@ -479,7 +259,7 @@
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$390000$K8KyZGzBfKfgy2gmriJhBl$ZZs8Zv/uF/BPejPmkHFrEDFCiwkS08FCNNhpvFb14Ww=",
-    "last_login": "2022-12-03T17:28:48.489Z",
+    "last_login": "2023-01-01T16:23:26.339Z",
     "is_superuser": true,
     "username": "admin",
     "first_name": "",
@@ -489,6 +269,167 @@
     "is_active": true,
     "date_joined": "2022-11-18T09:02:01.072Z",
     "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$raYJxp8C4JIWcKd5Ma85yZ$kVfy+q+2ssgKmeMql3ATIKQt8DJEqZs17OZDPmTSNDA=",
+    "last_login": "2023-01-01T16:18:39.841Z",
+    "is_superuser": false,
+    "username": "test",
+    "first_name": "test",
+    "last_name": "1",
+    "email": "test@exmp.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-12-22T10:07:20.053Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$pTkiCBBWRTMkbGzKnMbN5Q$sNoWxuWmKCtX/l8Dym6Shux/81TSJuHI4QqiKzyGEc0=",
+    "last_login": "2022-12-22T10:53:08.185Z",
+    "is_superuser": false,
+    "username": "test2",
+    "first_name": "test",
+    "last_name": "2",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-12-22T10:53:07.919Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$kZPGWkxxjjOLlQENVGlV7b$1r7qPPuhAtLgbZI9nfjtci8g27Al4BZD/n2yqewi0kQ=",
+    "last_login": "2022-12-22T11:54:23.899Z",
+    "is_superuser": false,
+    "username": "test3",
+    "first_name": "test",
+    "last_name": "",
+    "email": "exmp@exmp.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-12-22T11:54:23.718Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$i1eKxO95kDxfu1MHHhHDRv$dqgAX7szy1a1MlT3G7bDEHswZHbUkDQFeBOVNDIbeh0=",
+    "last_login": "2022-12-22T11:56:23.556Z",
+    "is_superuser": false,
+    "username": "test4",
+    "first_name": "test",
+    "last_name": "",
+    "email": "jojo_reference@example.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-12-22T11:56:23.384Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 6,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$44ui0ca1KmSpCs4lGz4TtZ$9onFePl24ZUp/tNXIUayv7K3pl3XCHKKNWvqjNBEp40=",
+    "last_login": "2023-01-01T16:40:13.833Z",
+    "is_superuser": false,
+    "username": "manager",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-12-23T16:48:27Z",
+    "groups": [
+      1
+    ],
+    "user_permissions": [
+      41,
+      49,
+      50,
+      51,
+      52,
+      42,
+      43,
+      44,
+      33,
+      34,
+      35,
+      36,
+      25,
+      26,
+      27,
+      28,
+      37,
+      38,
+      39,
+      40,
+      29,
+      30,
+      31,
+      32,
+      45,
+      46,
+      47,
+      48
+    ]
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 7,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$PTnD3AC0WYHUL0JAn12XMP$H76JCoZhjdDb+PARoftB+vk3OvlgZPthqVNkKuLKxdQ=",
+    "last_login": "2023-01-01T16:34:21.814Z",
+    "is_superuser": false,
+    "username": "lead",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-12-23T16:48:53Z",
+    "groups": [
+      2
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 8,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$qsypcM4sTFQi5JaqBkrdjL$WYizYvpUhb4KYLMpNrjyB+z59dUplfkPWZ1TL647LV0=",
+    "last_login": "2023-01-01T16:19:02.091Z",
+    "is_superuser": false,
+    "username": "dev",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-12-23T16:49:14Z",
+    "groups": [
+      3
+    ],
     "user_permissions": []
   }
 }
