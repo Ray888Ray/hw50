@@ -1,10 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-</body>
-</html>
+{% block title %}User{% endblock %}
+
+{% block content %}
+    <h2>User's list</h2></hr>
+    {% for user in user_obj %}
+    <h4>{{ user.username }}</h4>
+    <p><a class="btn btn-dark" href="{%  url 'accounts:profile' user.pk  %}">More...</a></p>
+    <hr>
+{% endfor %}<br/>
+
+{% endblock %}
