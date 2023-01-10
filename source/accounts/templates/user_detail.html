@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Profile Page {{ user_obj.get_full_name|default:user_obj.username }}</h1>
+<div class="card mb-3">
+    <div class="row g-0">
+          {% if user_obj.profile.avatar %}
+            <div class="col-md-4">
+              <img src="{{ user_obj.profile.avatar.url }}" class="img-fluid rounded-start" alt="...">
+            </div>
+      {% endif %}
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Name: {{ user_obj.username }}</h5>
+        <p class="card-text">First Name: {{ user_obj.first_name }}</p>
+        <p class="card-text">Last Name: {{ user_obj.last_name }}</p>
+        <p class="card-text">Email: {{ user_obj.email }}</p>
+        <p class="card-text">Git: {{ user_obj.git }}</p>
+        <p class="card-text">About: {{ user_obj.about }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% include 'partial/project_list.html' with project=object_list%}
+{% endblock %}
