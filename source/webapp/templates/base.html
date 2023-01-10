@@ -33,7 +33,7 @@
            </li>
 
            <li class="nav-item">
-               <p class="nav-link">Hello, {{ user.username }}!</p>
+               <p class="nav-link">Hello, <a href="{% url 'accounts:profile' request.user.pk %}">{{ user.username }}</a>!</p>
            </li>
 
        {% else %}
@@ -47,6 +47,11 @@
           </li>
 
        {% endif %}
+      {% if perms.accounts.can_see_users %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'accounts:user_list' %}?next={{ request.get_full_path }}">Users</a>
+            </li>
+          {% endif %}
       </ul>
     </div>
   </div>
